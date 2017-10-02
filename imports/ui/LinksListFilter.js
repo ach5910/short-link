@@ -6,7 +6,7 @@ export default class LinksListFilter extends Component{
     constructor(props){
         super(props);
         this.state = {
-            showVisible: Session.get('showVisible')
+            showVisible: false
         }
     }
 
