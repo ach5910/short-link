@@ -6,6 +6,8 @@ import Link from '../ui/Link';
 import NotFound from '../ui/NotFound';
 import LogIn from '../ui/LogIn';
 
+const unauthenticatedPages = ['/', '/singup'];
+const authenticatedPages = ['/links']
 const onEnterPublicPage = () => {
   if(Meteor.userId()){
     browserHistory.replace('/links');
@@ -29,9 +31,7 @@ export const onAuthChange = (isAuthenticated) => {
       browserHistory.replace('/')
     }
 }
-window.browserHistory = browserHistory;
-const unauthenticatedPages = ['/', '/singup'];
-const authenticatedPages = ['/links']
+
 export const routes = (
   <Router history={browserHistory}>
     <Route path="/" component={LogIn} onEnter={onEnterPublicPage}/>
